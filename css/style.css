@@ -595,37 +595,6 @@ q {
 .a11y-slider-dots li button.active {
   background: var(--clr-accent-400);
 }
-/* SCROLLBAR */
-
-/* ::-webkit-scrollbar {
-  width: 2em;
-  height: 2em;
-
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(120 75% 50% / 1);
-  border-radius: 100vw;
-  margin-block: .5em;
-  margin-inline: 1em;
-}
-::-webkit-scrollbar-thumb {
-
-  background: hsl(120 100% 20% / 1);
-  border: .25em solid hsl(120 25% 75% 50% / 1);
-  border-radius: 100vw;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(120 100% 10% / 1);
-}
-
-@supports (scrollbar-color: red blue) {
-  * {
-    scrollbar-color: hsl(216, 100%, 25%)  hsl(266, 16%, 81%);
-    scrollbar-width: auto;
-  }
-} */
 
 /**************** FOOTER ****************/
 
