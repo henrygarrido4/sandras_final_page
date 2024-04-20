@@ -1,0 +1,177 @@
+:root {
+  --clr-primary-400: hsl(212, 97%, 14%);
+}
+
+/************ PRIMARY HEADER ************/
+
+.primary-header {
+  --text: var(--clr-primary-400);
+}
+
+/*********** CONTACT FORM ************/
+
+.bg-contact-form {
+  z-index: 1;
+  background: linear-gradient(#ffdad5, #fff7f9);
+}
+
+.contact-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 10rem;
+}
+
+@media (max-width: 40em) {
+  .contact-container {
+    margin-top: 9rem;
+    padding: 0;
+  }
+}
+
+.contact-left {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20px;
+}
+
+.contact-left-title h2 {
+  font-weight: 700;
+  color: #a363aa;
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.contact-left-title hr {
+  border: none;
+  width: 120px;
+  height: 5px;
+  background-color: #a363aa;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-inputs {
+  width: 250px;
+  height: 3.5rem;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #666;
+  border-radius: 50px;
+}
+
+.contact-inputs-textarea {
+  width: 15.625rem;
+  height: 8rem;
+  border: none;
+  outline: none;
+  padding-left: 25px;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  color: #666;
+  border-radius: 50px;
+}
+
+.contact-left textarea {
+  height: 140px;
+  padding-top: 15px;
+  border-radius: 20px;
+}
+
+.contact-inputs:focus {
+  border: 2px solid #ff994f;
+}
+
+.contact-inputs::placeholder {
+  color: #a9a9a9;
+}
+
+.contact-submit {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
+  font-size: 16px;
+  color: #fff;
+  gap: 10px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(
+    270deg,
+    var(--clr-accent-500),
+    var(--clr-primary-400)
+  );
+  cursor: pointer;
+}
+
+.contact-left button img {
+  height: 15px;
+}
+
+.contact-right {
+  width: 600px;
+  border-radius: 5px;
+}
+@media (max-width: 800px) {
+  .contact-inputs {
+    width: 80vw;
+  }
+  .contact-right {
+    display: none;
+  }
+}
+
+textarea,
+input {
+  float: left;
+  width: 220px;
+  padding: 2px;
+}
+
+#submit {
+  margin-left: 180px;
+  clear: both;
+  width: 100px;
+}
+
+label.error {
+  float: left;
+  color: red;
+  clear: none;
+  width: 200px;
+  padding-left: 10px;
+  font-size: 11px;
+}
+
+.required_msg {
+  padding-left: 180px;
+  clear: both;
+  float: left;
+  color: red;
+}
+
+fieldset {
+  border: 0;
+}
+
+label {
+  display: block;
+  width: 15rem;
+  float: left;
+  clear: both;
+  margin-top: 10px;
+}
+label em {
+  display: block;
+  float: right;
+  padding-right: 8px;
+  color: red;
+}
+
+textarea {
+  height: 180px;
+}

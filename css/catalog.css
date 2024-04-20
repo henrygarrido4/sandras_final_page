@@ -1,0 +1,193 @@
+:root {
+  --clr-primary-400: hsl(212, 97%, 14%);
+
+  --clr-accent-600: hsl(327, 45%, 76%);
+  --clr-accent-500: hsl(327, 68%, 51%);
+  --clr-accent-400: hsl(330.59deg 81.66% 42.85%);
+  --clr-accent-300: hsl(334, 49%, 61%);
+  --clr-accent-100: hsl(13, 100%, 96%);
+
+  --radius-large: 16px;
+
+  /* box shadow */
+  --shadow-1: 0px 2px 4px 0px #00000033;
+  --shadow-2: 0 3px 5px -2px hsl(220 40% 2% / calc(10% + 3%)),
+    0 7px 14px -5px hsl(220 40% 2% / calc(10% + 5%));
+  --shadow-3: 0px 5px 10px 0px #00000033;
+  --shadow-4: 0px 10px 20px 0px #0000001a;
+
+  /* transition */
+  --transition-easing-quick: cubic-bezier(0, 0.7, 0.3, 1);
+  --transition-duration-quick: 200ms;
+  --transition-duration-smooth: 500ms;
+}
+
+/************ PRIMARY HEADER ************/
+
+.home-intro .hero-image {
+  /* safety measure background-color */
+  background-color: #224441;
+  /* safety measure background-color */
+  background-image: linear-gradient(
+      rgba(31, 31, 31, 0.8),
+      rgba(31, 31, 31, 0.8)
+    ),
+    url(/images/Album\ 1.png);
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  color: #fff;
+  padding-top: 300px;
+  padding-bottom: 350px;
+  text-shadow: 2px 2px var(--clr-accent-400);
+  color: #777777;
+  box-shadow: var(--shadow-2);
+}
+
+.content-section {
+  margin: 1em;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.5em;
+}
+.section-header {
+  border-top: groove;
+  text-align: center;
+  padding-top: 1em;
+}
+
+/* CARDS */
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  height: 250px;
+  cursor: pointer;
+}
+
+.container .popup-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgb(0, 0, 0, 0.9);
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  display: none;
+}
+
+span:hover {
+  cursor: pointer;
+}
+
+.container .popup-image span {
+  position: absolute;
+  top: 120px;
+  right: 10px;
+  font-size: 50px;
+  font-weight: bolder;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+}
+
+.container .popup-image img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid #fff;
+  border-radius: 5px;
+  width: 750px;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .container .popup-image img {
+    width: 95%;
+    margin-top: 5em;
+  }
+}
+
+.shop-item {
+  --shadow-2: 0px 5px 10px 0px #0000000d;
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  margin: 30px;
+  box-shadow: var(--shadow-2);
+  transition: var(--transition-easing-quick) var(--transition-easing-quick);
+}
+
+.shop-item:where(:hover, :focus-within) {
+  box-shadow: var(--shadow-4);
+}
+
+.shop-item .img-cover {
+  transition: var(--transition-duration-smooth) var(--transition-easing-quick);
+}
+
+.shop-item:where(:hover, :focus-within) .img-cover {
+  scale: 1.05;
+  rotate: 2deg;
+}
+
+.shop-item-title {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.shop-item-details {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+}
+
+.shop-item-price {
+  flex-grow: 1;
+  color: #333;
+}
+
+.shop-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* REALIZAR ORDEN BTN */
+
+button a {
+  color: white;
+}
+
+/*.whatsapp-btn {
+  background-color: var(--clr-accent-400);
+  bottom: 50px;
+  right: 50px;
+}*/
+
+.button-green {
+  margin-bottom: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 9%;
+  border: 1px solid black;
+  background-color: var(--clr-accent-500);
+}
+
+.button-green:hover {
+  background-color: hsl(330.59deg 31.75% 68.31%);
+}
+
+@media (max-width: 30em) {
+  .button-green {
+    width: 50%;
+  }
+}
