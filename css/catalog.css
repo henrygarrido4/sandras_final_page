@@ -68,7 +68,7 @@
   cursor: pointer;
 }
 
-.container .popup-image {
+.container.popup-image {
   position: fixed;
   top: 0;
   left: 0;
@@ -83,7 +83,7 @@ span:hover {
   cursor: pointer;
 }
 
-.container .popup-image span {
+.container.popup-image span {
   position: absolute;
   top: 120px;
   right: 10px;
@@ -94,7 +94,7 @@ span:hover {
   z-index: 10000;
 }
 
-.container .popup-image img {
+.container.popup-image img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -152,7 +152,8 @@ span:hover {
 
 .shop-item-price {
   flex-grow: 1;
-  color: #333;
+  color: blue;
+  font-weight: bold;
 }
 
 .shop-items {
