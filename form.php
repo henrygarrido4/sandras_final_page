@@ -81,8 +81,13 @@
             </ul>
           </nav>
 
-          <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
-        </div>
+           <button
+            class="toggle_btn"
+            aria-label="Menu toggle"
+            aria-expanded="false"
+          >
+            <i class="fa-solid fa-bars"></i>
+          </button>
 
         <div class="dropdown_menu sticky">
           <ul>
