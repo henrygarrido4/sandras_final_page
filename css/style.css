@@ -173,23 +173,25 @@ p[data-width="wide"] {
 /***************** HERO SECTION *****************/
 
 .home-intro .hero-image {
-  /* safety measure background-color */
-  background-color: #224441;
-  /* safety measure background-color */
-  background-image: linear-gradient(
-      rgba(31, 31, 31, 0.8),
-      rgba(31, 31, 31, 0.8)
-    ),
+  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url(/images/balloon-party\ 1200.png);
   background-size: cover;
-  background-position: center 84%;
-  text-align: center;
+  background-position: center 85%;
+  background-repeat: no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.home-intro .hero-content {
   color: #fff;
-  padding-top: 300px;
-  padding-bottom: 350px;
-  text-shadow: 2px 2px var(--clr-accent-400);
-  color: #777777;
-  box-shadow: var(--shadow-2);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 99, 71, 0.6),
+    0 0 70px rgba(255, 99, 71, 0.6), 0 0 80px rgba(255, 99, 71, 0.6),
+    0 0 100px rgba(255, 99, 71, 0.6);
 }
 
 @media (max-width: 38rem) {
@@ -402,9 +404,7 @@ p[data-width="wide"] {
 
   .nav-wrapper .toggle_btn {
     display: block;
-
   }
-  
 
   .dropdown_menu {
     z-index: 999;
@@ -751,6 +751,7 @@ span {
 .even-columns {
   display: grid;
   gap: 1rem;
+  padding-bottom: 20px;
 }
 
 @media (min-width: 47em) {
@@ -776,10 +777,6 @@ span {
 
 :where(.flow :not(:first-child)) {
   margin-top: var(--flow-spacer, 3em);
-}
-
-.text-center {
-  text-align: center;
 }
 
 .text-center p {
@@ -903,6 +900,10 @@ span {
 
 .text_black {
   color: #000;
+}
+
+.text-center {
+  text-align: center;
 }
 
 @media (min-width: 47em) {
