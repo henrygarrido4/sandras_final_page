@@ -162,11 +162,16 @@ function showLightbox(index) {
   const lightboxImage = document.getElementById("lightboxImage");
   const catalog = document.querySelectorAll(".shop-item img");
   lightboxImage.src = catalog[index].src;
+  lightboxImage.classList.add("show");
   lightbox.style.display = "flex";
 }
 
 function navigateLightbox(direction) {
   const catalog = document.querySelectorAll(".shop-item img");
+  const lightboxImage = document.getElementById("lightboxImage");
+  lightboxImage.classList.remove("show");
+  lightboxImage.classList.add(direction > 0 ? "hide-left" : "hide-right");
+
   currentImageIndex += direction;
 
   if (currentImageIndex < 0) {
@@ -175,12 +180,17 @@ function navigateLightbox(direction) {
     currentImageIndex = 0;
   }
 
-  const lightboxImage = document.getElementById("lightboxImage");
-  lightboxImage.src = catalog[currentImageIndex].src;
+  setTimeout(() => {
+    lightboxImage.src = catalog[currentImageIndex].src;
+    lightboxImage.classList.remove("hide-left", "hide-right");
+    lightboxImage.classList.add("show");
+  }, 500); // Match the transition duration
 }
 
 function closeLightbox() {
   const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  lightboxImage.classList.remove("show");
   lightbox.style.display = "none";
 }
 
@@ -191,5 +201,26 @@ document.addEventListener("keydown", function (event) {
     } else if (event.key === "ArrowRight") {
       navigateLightbox(1);
     }
+  }
+});
+
+let startX = 0;
+let endX = 0;
+
+document.getElementById("lightbox").addEventListener("touchstart", function (event) {
+  startX = event.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchmove", function (event) {
+  endX = event.touches[0].clientX;
+});
+
+document.getElementById("lightbox").addEventListener("touchend", function (event) {
+  if (startX - endX > 50) {
+    // Swiped left
+    navigateLightbox(1);
+  } else if (endX - startX > 50) {
+    // Swiped right
+    navigateLightbox(-1);
   }
 });
