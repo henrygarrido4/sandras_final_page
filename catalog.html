@@ -9,6 +9,7 @@
       content="Decorations, Arreglos Personalizados, Bouquet, Vasos, Termos, Fresas con chocolate"
     />
     <meta name="author" content="Henrry Garrido" />
+    <meta name="robots" content="all" />
     <title>Sandra's Creations</title>
 
     <!-- CSS STYLE SHEET -->
@@ -17,6 +18,12 @@
     <link rel="stylesheet" href="css/catalog_Slider.css" />
 
     <!-- GOOGLE FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -99,7 +106,7 @@
         <div class="hero-content">
           <h1 class="fs-primary-heading fw-bold">
             <q
-              >Si se puede soñar, <br />
+              >Si se puede soñar<br />
               se puede crear!
             </q>
           </h1>
@@ -204,8 +211,10 @@
       });
     </script>
     <div id="lightbox" class="lightbox" style="display: none">
+      <span class="lightbox-arrow" id="prev" onclick="navigateLightbox(-1)">&#10094;</span>
+      <img id="lightboxImage" class="lightbox-image" />
+      <span class="lightbox-arrow" id="next" onclick="navigateLightbox(1)">&#10095;</span>
       <span class="close" onclick="closeLightbox()">&times;</span>
-      <img class="lightbox-content" id="lightboxImage" />
     </div>
   </body>
 </html>

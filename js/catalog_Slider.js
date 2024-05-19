@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
     catalogHTML += `
           <div class="shop-item">
               <h2 class="shop-item-title">${item.title}</h2>
-              <img id="${imageId}" class="img-cover" src="${item.img}" alt="${item.title}" onclick="showLightbox(this)">
+              <img id="${imageId}" class="img-cover" src="${item.img}" alt="${item.title}" onclick="showLightbox(${index})">
               <div class="shop-item-details">
                   <span class="shop-item-price text-center">${item.price}</span>
               </div>
@@ -154,14 +154,42 @@ document.addEventListener("DOMContentLoaded", function () {
   catalogContainer.innerHTML = catalogHTML;
 });
 
-function showLightbox(imgElement) {
+let currentImageIndex = 0;
+
+function showLightbox(index) {
+  currentImageIndex = index;
   const lightbox = document.getElementById("lightbox");
   const lightboxImage = document.getElementById("lightboxImage");
-  lightboxImage.src = imgElement.src; // Sets the source for the lightbox image
-  lightbox.style.display = "flex"; // Makes the lightbox visible
+  const catalog = document.querySelectorAll(".shop-item img");
+  lightboxImage.src = catalog[index].src;
+  lightbox.style.display = "flex";
+}
+
+function navigateLightbox(direction) {
+  const catalog = document.querySelectorAll(".shop-item img");
+  currentImageIndex += direction;
+
+  if (currentImageIndex < 0) {
+    currentImageIndex = catalog.length - 1;
+  } else if (currentImageIndex >= catalog.length) {
+    currentImageIndex = 0;
+  }
+
+  const lightboxImage = document.getElementById("lightboxImage");
+  lightboxImage.src = catalog[currentImageIndex].src;
 }
 
 function closeLightbox() {
   const lightbox = document.getElementById("lightbox");
-  lightbox.style.display = "none"; // Hides the lightbox
+  lightbox.style.display = "none";
 }
+
+document.addEventListener("keydown", function (event) {
+  if (document.getElementById("lightbox").style.display === "flex") {
+    if (event.key === "ArrowLeft") {
+      navigateLightbox(-1);
+    } else if (event.key === "ArrowRight") {
+      navigateLightbox(1);
+    }
+  }
+});
