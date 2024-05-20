@@ -1,8 +1,3 @@
-// js/main.js
-document.addEventListener("DOMContentLoaded", function () {
-  AOS.init();
-});
-
 const header = document.querySelector("header");
 const sectionOne = document.querySelector(".home-intro");
 

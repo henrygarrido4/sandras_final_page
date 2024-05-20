@@ -188,10 +188,27 @@ p[data-width="wide"] {
 
 .home-intro .hero-content {
   color: #fff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.4),
-    0 0 30px rgba(255, 255, 255, 0.3), 0 0 40px rgba(255, 99, 71, 0.6),
-    0 0 70px rgba(255, 99, 71, 0.6), 0 0 80px rgba(255, 99, 71, 0.6),
-    0 0 100px rgba(255, 99, 71, 0.6);
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 99, 71, 0.8),
+    0 0 20px rgba(255, 99, 71, 0.7), 0 0 30px rgba(255, 99, 71, 0.6),
+    0 0 40px rgba(255, 99, 71, 0.5), 0 0 50px rgba(255, 99, 71, 0.4);
+}
+
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 99, 71, 0.8),
+      0 0 20px rgba(255, 99, 71, 0.7), 0 0 30px rgba(255, 99, 71, 0.6),
+      0 0 40px rgba(255, 99, 71, 0.5), 0 0 50px rgba(255, 99, 71, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 99, 71, 1),
+      0 0 30px rgba(255, 99, 71, 0.9), 0 0 40px rgba(255, 99, 71, 0.8),
+      0 0 50px rgba(255, 99, 71, 0.7), 0 0 60px rgba(255, 99, 71, 0.6);
+  }
+}
+
+.home-intro .hero-content {
+  animation: neon 1.5s ease-in-out infinite alternate;
 }
 
 @media (max-width: 38rem) {
@@ -273,6 +290,7 @@ p[data-width="wide"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-inline: -50px;
 }
 
 .nav__link {

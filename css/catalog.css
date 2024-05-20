@@ -26,22 +26,24 @@
 
 .home-intro .hero-image {
   /* safety measure background-color */
-  background-color: #224441;
-  /* safety measure background-color */
-  background-image: linear-gradient(
-      rgba(31, 31, 31, 0.8),
-      rgba(31, 31, 31, 0.8)
-    ),
+  background-image: linear-gradient(rgba(31, 31, 31, 0.8), rgba(31, 31, 31, 0.8)),
     url(/images/Album\ 1.png);
   background-size: cover;
   background-position: center;
-  text-align: center;
-  color: #fff;
-  padding-top: 300px;
-  padding-bottom: 350px;
-  text-shadow: 2px 2px var(--clr-accent-400);
-  color: #777777;
-  box-shadow: var(--shadow-2);
+  background-repeat: no-repeat;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+body {
+  background-image: url(/images/catalog_background3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .content-section {
