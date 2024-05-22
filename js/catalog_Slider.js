@@ -106,21 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
       img: "images/pastel-3.jpg",
       price: "$39.99",
     },
-    {
-      title: "Tumbler para niños",
-      img: "images/termo-1.jpg",
-      price: "$19.99",
-    },
-    {
-      title: "Tumbler de 20oz",
-      img: "images/termo-2.jpg",
-      price: "$34.99",
-    },
-    {
-      title: "Skinny tumbler 20oz",
-      img: "images/termo-3.jpg",
-      price: "$34.99",
-    },
+
     {
       title: "Vaso de vidrio personalizado",
       img: "images/vaso-1.jpg",

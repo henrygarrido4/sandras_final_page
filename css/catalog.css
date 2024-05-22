@@ -20,6 +20,8 @@
   --transition-easing-quick: cubic-bezier(0, 0.7, 0.3, 1);
   --transition-duration-quick: 200ms;
   --transition-duration-smooth: 500ms;
+
+  --ff-raleway: "Raleway", sans-serif;
 }
 
 /************ PRIMARY HEADER ************/
@@ -137,10 +139,10 @@ span:hover {
 }
 
 .shop-item-title {
+  font-family: var(--ff-raleway);
   display: block;
   width: 100%;
   text-align: center;
-  font-weight: bold;
   font-size: 1.5em;
   color: #333;
   margin-bottom: 15px;

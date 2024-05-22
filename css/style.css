@@ -454,6 +454,16 @@ p[data-width="wide"] {
   position: relative;
 }
 
+.sandra_image {
+  height: 55vh;
+}
+
+.sales-points-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+
 .sales-points-img img {
   padding-block: var(--size-300);
 }
