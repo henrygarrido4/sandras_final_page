@@ -33,7 +33,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh;
+  height: 50dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,7 +135,6 @@ span:hover {
 
 .shop-item:where(:hover, :focus-within) .img-cover {
   scale: 1.05;
-  rotate: 2deg;
 }
 
 .shop-item-title {

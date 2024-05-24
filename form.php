@@ -205,6 +205,9 @@
           </div>
         </div>
       </div>
+      <p class="text-center text_black" style="padding-top: 1rem">
+        &copy; 2024 Sandra's Creations. All rights reserved.
+      </p>
     </footer>
 
     <script>

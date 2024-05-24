@@ -27,7 +27,7 @@
 }
 
 .contact-container {
-  height: 100vh;
+  height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
@@ -111,11 +111,7 @@
   gap: 10px;
   border: none;
   border-radius: 50px;
-  background: linear-gradient(
-    270deg,
-    var(--clr-accent-500),
-    var(--clr-primary-400)
-  );
+  background: linear-gradient(270deg, var(--clr-accent-500), var(--clr-primary-400));
   cursor: pointer;
 }
 

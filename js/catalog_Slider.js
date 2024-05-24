@@ -120,21 +120,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Add more items as needed
   ];
-
   const catalogContainer = document.getElementById("catalog");
   let catalogHTML = "";
 
   catalog.forEach((item, index) => {
     const imageId = `image-${index + 1}`;
     catalogHTML += `
-          <div class="shop-item">
-              <h2 class="shop-item-title">${item.title}</h2>
-              <img id="${imageId}" class="img-cover" src="${item.img}" alt="${item.title}" onclick="showLightbox(${index})">
-              <div class="shop-item-details">
-                  <span class="shop-item-price text-center">${item.price}</span>
-              </div>
-          </div>
-      `;
+      <div class="shop-item" data-index="${index + 1}">
+        <h2 class="shop-item-title">${item.title}</h2>
+        <img id="${imageId}" class="img-cover" src="${item.img}" alt="${
+      item.title
+    }" onclick="showLightbox(${index})">
+        <div class="shop-item-details">
+          <span class="shop-item-price text-center">${item.price}</span>
+        </div>
+      </div>
+    `;
   });
 
   catalogContainer.innerHTML = catalogHTML;
@@ -150,6 +151,14 @@ function showLightbox(index) {
   lightboxImage.src = catalog[index].src;
   lightboxImage.classList.add("show");
   lightbox.style.display = "flex";
+  document.body.classList.add("no-scroll");
+
+  // Close lightbox when clicking outside the image
+  lightbox.addEventListener("click", function (event) {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
 }
 
 function navigateLightbox(direction) {
@@ -170,7 +179,7 @@ function navigateLightbox(direction) {
     lightboxImage.src = catalog[currentImageIndex].src;
     lightboxImage.classList.remove("hide-left", "hide-right");
     lightboxImage.classList.add("show");
-  }, 500); // Match the transition duration
+  }, 100); // Match the transition duration
 }
 
 function closeLightbox() {
@@ -178,11 +187,14 @@ function closeLightbox() {
   const lightboxImage = document.getElementById("lightboxImage");
   lightboxImage.classList.remove("show");
   lightbox.style.display = "none";
+  document.body.classList.remove("no-scroll");
 }
 
 document.addEventListener("keydown", function (event) {
   if (document.getElementById("lightbox").style.display === "flex") {
-    if (event.key === "ArrowLeft") {
+    if (event.key === "Escape") {
+      closeLightbox();
+    } else if (event.key === "ArrowLeft") {
       navigateLightbox(-1);
     } else if (event.key === "ArrowRight") {
       navigateLightbox(1);
@@ -203,10 +215,8 @@ document.getElementById("lightbox").addEventListener("touchmove", function (even
 
 document.getElementById("lightbox").addEventListener("touchend", function (event) {
   if (startX - endX > 50) {
-    // Swiped left
     navigateLightbox(1);
   } else if (endX - startX > 50) {
-    // Swiped right
     navigateLightbox(-1);
   }
 });

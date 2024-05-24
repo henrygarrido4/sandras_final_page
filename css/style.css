@@ -90,7 +90,7 @@ html:focus-within {
 
 /***************** Set core body defaults *****************/
 body {
-  min-height: 100vh;
+  min-height: 100dvh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -179,7 +179,7 @@ p[data-width="wide"] {
   background-size: cover;
   background-position: center 85%;
   background-repeat: no-repeat;
-  height: 80vh;
+  height: 50dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -213,7 +213,7 @@ p[data-width="wide"] {
 
 @media (max-width: 38rem) {
   .home-intro .hero-image {
-    height: 80vh;
+    height: 50dvh;
     background-position: center;
     --container-padding: 0;
   }
@@ -455,14 +455,14 @@ p[data-width="wide"] {
 }
 
 .sandra_image {
-  height: 55vh;
+  height: 35dvh;
 }
 
 .sales-points-img {
   display: flex;
   justify-content: center;
   align-items: center;
-} 
+}
 
 .sales-points-img img {
   padding-block: var(--size-300);
@@ -687,7 +687,7 @@ q {
   font-size: 3rem;
   margin-inline: 15px;
   text-decoration: none;
-  color: white;
+  color: #000;
 }
 
 .footer-grid {
@@ -702,7 +702,6 @@ q {
   display: flex;
   justify-content: space-evenly;
   margin-inline: 7rem;
-  background-color: #5e64c9;
   border-radius: 10px;
 }
 
@@ -721,7 +720,7 @@ q {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 15px;
   margin: 20px 0;
 }
 
