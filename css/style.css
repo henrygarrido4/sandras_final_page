@@ -1,6 +1,6 @@
 :root {
-  --clr-accent-600: hsl(327, 45%, 76%);
-  --clr-accent-500: hsl(327, 68%, 51%);
+  --clr-accent-600: rgb(221, 166, 197);
+  --clr-accent-500: rgb(215, 45, 139);
   --clr-accent-400: hsl(330.59deg 81.66% 42.85%);
   --clr-accent-300: hsl(334, 49%, 61%);
   --clr-accent-100: hsl(13, 100%, 96%);
@@ -196,9 +196,10 @@ p[data-width="wide"] {
 @keyframes neon {
   0%,
   100% {
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 99, 71, 0.8),
-      0 0 20px rgba(255, 99, 71, 0.7), 0 0 30px rgba(255, 99, 71, 0.6),
-      0 0 40px rgba(255, 99, 71, 0.5), 0 0 50px rgba(255, 99, 71, 0.4);
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8),
+      0 0 10px rgba(255, 99, 71, 0.8), 0 0 20px rgba(255, 99, 71, 0.7),
+      0 0 30px rgba(255, 99, 71, 0.6), 0 0 40px rgba(255, 99, 71, 0.5),
+      0 0 50px rgba(255, 99, 71, 0.4);
   }
   50% {
     text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 99, 71, 1),
